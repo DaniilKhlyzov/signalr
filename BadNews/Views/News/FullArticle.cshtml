@@ -17,6 +17,8 @@
                     </form>
                 }
                 @Html.Raw(Model.Article.ContentHtml)
+
+                @(await Html.RenderComponentAsync<Comments>(RenderMode.ServerPrerendered, new { ArticleId = Model.Article.Id }))
             </div>
         </div>
 
